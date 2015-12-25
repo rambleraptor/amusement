@@ -32,8 +32,8 @@ class UniversalPark(Park):
         token = self._get_token()
         page = self._get_request(token)
 
-        print page
         for ride in page['Rides']:
+            print ride
             if ride['VenueId'] == self.getId():
                 self._make_attraction(ride)
 

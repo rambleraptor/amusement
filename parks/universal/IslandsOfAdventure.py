@@ -1,8 +1,11 @@
 from UniversalPark import UniversalPark
 
-class UniversalStudiosFlorida(UniversalPark):
+class IslandsOfAdventure(UniversalPark):
     def __init__(self):
-        super(UniversalStudiosFlorida, self).__init__()
+        super(IslandsOfAdventure, self).__init__()
 
     def getId(self):
-        return '10000'
+        return 10000
+
+    def getName(self):
+        return 'Islands of Adventure'

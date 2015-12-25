@@ -7,3 +7,6 @@ class BuschGardensTampa(SeaworldPark):
 
     def getId(self):
         return 'BG_TPA'
+
+    def getName(self):
+        return 'Busch Gardens Tampa'

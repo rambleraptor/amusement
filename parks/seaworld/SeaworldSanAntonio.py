@@ -7,3 +7,6 @@ class SeaworldSanAntonio(SeaworldPark):
 
     def getId(self):
         return 'SW_SAT'
+
+    def getName(self):
+        return 'Seaworld San Antonio'
