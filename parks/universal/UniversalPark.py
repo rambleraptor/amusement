@@ -23,6 +23,8 @@ SHARED_HEADERS = {
     'Accept-Encoding'                 : 'gzip'
   }
 
+RIDE_URL = 'https://services.universalorlando.com/api/pointsofinterest/rides?pageSize=all'
+SHOW_URL = 'https://services.universalorlando.com/api/pointsofinterest/Shows'
 class UniversalPark(Park):
     def __init__(self):
         super(UniversalPark, self).__init__()
@@ -30,16 +32,19 @@ class UniversalPark(Park):
 
     def _build_park(self):
         token = self._get_token()
-        page = self._get_request(token)
-
-        for ride in page['Rides']:
-            print ride
+        ride_page = self._get_request(token, RIDE_URL)
+        show_page = self._get_request(token, SHOW_URL)
+        print ride_page
+        print show_page
+        for ride in ride_page['Results']:
             if ride['VenueId'] == self.getId():
                 self._make_attraction(ride)
 
+        """
         for show in page['Shows']:
             if show['VenueId'] == self.getId():
                 self._make_show(show)
+        """
 
     def _make_attraction(self, ride):
         attraction = Ride()
@@ -70,13 +75,13 @@ class UniversalPark(Park):
         self.addShow(show_obj)
 
 
-    def _get_request(self, token):
+    def _get_request(self, token, url):
         headers = {
             'X-UNIWebService-ApiKey' : 'AndroidMobileApp',
             'X-UNIWebService-Token' : token 
         }
         headers.update(SHARED_HEADERS)
-        r = requests.get('https://services.universalorlando.com/api/pointsofinterest', headers=headers)
+        r = requests.get(url, headers=headers)
         return r.json()
 
     def _get_token(self):
