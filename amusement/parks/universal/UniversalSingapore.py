@@ -6,6 +6,9 @@ from amusement.park import Park
 from amusement.show import Show
 from amusement.ride import Ride
 
+"""
+This is expirimental! It is a work in progress and probably will not work. USS's API has been very tempermental.
+"""
 class UniversalSingapore(Park):
     _url = 'http://cma.rwsentosa.com/Service.svc/GetUSSContent?languageID=1&filter=Show,Ride,MeetAndGreet,&Latitude=1.254251&Longitude=103.823797'
 
