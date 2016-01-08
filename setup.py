@@ -7,4 +7,10 @@ setup(name='amusement',
       author='Alex Stephen',
       license='MIT',
       packages=['amusement'],
+      install_requires=[
+        'requests',
+        'beautifulsoup4',
+        'nose',
+        'python-dateutil'
+      ],
       zip_safe=False)
