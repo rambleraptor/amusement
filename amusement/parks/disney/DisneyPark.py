@@ -9,7 +9,6 @@ class DisneyPark(Park):
 
     def __init__(self):
         self._id = self.getId()
-        self._auth_token = self._authorize()
         self._url = URL_TEMPLATE % self._id
         self.name = self.getName()
         super(DisneyPark, self).__init__()
@@ -21,6 +20,7 @@ class DisneyPark(Park):
         raise('This must be implemented in a subclass')
 
     def _buildPark(self):
+        self._auth_token = self._authorize()
         page = self._get_page()
 
         for attraction in page['entries']:

@@ -7,10 +7,16 @@ setup(name='amusement',
       author='Alex Stephen',
       license='MIT',
       packages=['amusement'],
+      include_package_data=True,
       install_requires=[
         'requests',
         'beautifulsoup4',
         'nose',
-        'python-dateutil'
+        'python-dateutil',
+        'Click'
       ],
+      entry_points='''
+                [console_scripts]
+                amusement=amusement.scripts.cli:cli
+                    ''',
       zip_safe=False)

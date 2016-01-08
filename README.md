@@ -1,6 +1,6 @@
 # amusement
 
-amusement is a Python package to get the current wait times and show times of attractions at many popular theme parks. We currently support:
+amusement is a Python package and CLI (command-line interface) to get the current wait times and show times of attractions at many popular theme parks. We currently support:
 
 * All Disney parks in USA, plus Paris
 * All Universal parks worldwide (with the exception of Singapore)
@@ -8,12 +8,19 @@ amusement is a Python package to get the current wait times and show times of at
 * Hersheypark
 
 ## Example
+### CLI
+Get wait times right from your terminal
+```
+amusement islands-adventure --rides
+```
+
+### Library
 ```
 from amusement.parks.universal.IslandsOfAdventure import IslandsOfAdventure
 
 ioa = IslandsOfAdventure()
 print ioa.rides()
-print ioa.shows()
+# or print ioa.shows() if you want show times instead
 ```
 A full list of the rides and shows in the park will be displayed!
 
