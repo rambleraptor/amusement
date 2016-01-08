@@ -19,12 +19,11 @@ class UniversalSingapore(Park):
     }
     def __init__(self):
         super(UniversalSingapore, self).__init__()
-        self._build_park()
 
     def getName(self):
         return 'Universal Studios Singapore'
 
-    def _build_park(self):
+    def _buildPark(self):
         page = self.get_page(self._url)
 
         zone_list = page.html.body.responseofuss.result.find_all('usszonelist')[0]

@@ -22,9 +22,7 @@ class SeaworldPark(Park):
         today = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d')
         self._show_url = SHOW_URL_FORMAT.format(self.getId(), today)
 
-        self._build_page()
-
-    def _build_page(self):
+    def _buildPark(self):
         parsed_page = self._get_page(self._park_url)
         for poi in parsed_page:
             self._build_ride(poi)

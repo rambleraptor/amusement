@@ -9,12 +9,11 @@ from amusement.config.usj import strings as names
 class UniversalJapan(Park):
     def __init__(self):
         super(UniversalJapan, self).__init__()
-        self._build_park()
 
     def getName(self):
         return 'Universal Studios Japan'
 
-    def _build_park(self):
+    def _buildPark(self):
         page = self._get_page() 
 
         if 'list' not in page:

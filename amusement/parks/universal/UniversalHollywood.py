@@ -9,12 +9,11 @@ from amusement.show import Show
 class UniversalHollywood(Park):
     def __init__(self):
         super(UniversalHollywood, self).__init__()
-        self._build_park()
 
     def getName(self):
         return 'Universal Studios Hollywood'
 
-    def _build_park(self):
+    def _buildPark(self):
         page = self.get_page() 
 
         for table_row in page.find_all('tr'):

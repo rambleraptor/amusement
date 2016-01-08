@@ -10,12 +10,11 @@ class HersheyPark(Park):
 
     def __init__(self):
         super(HersheyPark, self).__init__()
-        self._build_page()
 
     def getName(self):
         return 'Hersheypark'
 
-    def _build_page(self):
+    def _buildPark(self):
         park_page = self.get_page(self._park_url)
         wait_page = self.get_page(self._wait_url)
         # Deal with attractions

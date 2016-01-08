@@ -14,15 +14,13 @@ class DisneyPark(Park):
         self.name = self.getName()
         super(DisneyPark, self).__init__()
 
-        self._build_park()
-
     def getId(self):
         raise('This must be implemented in a subclass')
 
     def getName(self):
         raise('This must be implemented in a subclass')
 
-    def _build_park(self):
+    def _buildPark(self):
         page = self._get_page()
 
         for attraction in page['entries']:

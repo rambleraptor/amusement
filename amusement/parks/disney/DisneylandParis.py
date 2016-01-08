@@ -11,12 +11,11 @@ from amusement.config.disneyparis import strings
 class DisneylandParis(Park):
     def __init__(self):
         super(DisneylandParis, self).__init__()
-        self._build_park()
 
     def getName(self):
         return 'Disneyland Paris'
 
-    def _build_park(self):
+    def _buildPark(self):
         times = self._get_page()
         time_list = times['l']
         for i in range(0, len(times['l']), 5):

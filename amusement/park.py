@@ -4,15 +4,18 @@ class Park(object):
         self._rides = []
         self._shows = []
         self._time = datetime.datetime.now()
-        self.name = ''
 
     def rides(self):
+        if self._rides == []:
+            self._buildPark()
         return self._rides
 
     def update_time(self):
         return self._time
 
     def shows(self):
+        if self._shows == []:
+            self._buildPark()
         return self._shows
 
     def addRide(self, ride):
@@ -25,4 +28,7 @@ class Park(object):
         self.name = name
 
     def getName(self):
-        return self.name
+        raise('This must be implemented')
+
+    def _buildPark(self):
+        raise('This must be implemented')

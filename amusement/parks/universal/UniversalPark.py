@@ -26,14 +26,11 @@ SHOW_URL = 'https://services.universalorlando.com/api/pointsofinterest/Shows'
 class UniversalPark(Park):
     def __init__(self):
         super(UniversalPark, self).__init__()
-        self._build_park()
 
-    def _build_park(self):
+    def _buildPark(self):
         token = self._get_token()
         ride_page = self._get_request(token, RIDE_URL)
         show_page = self._get_request(token, SHOW_URL)
-        print ride_page
-        print show_page
         for ride in ride_page['Results']:
             if ride['VenueId'] == self.getId():
                 self._make_attraction(ride)

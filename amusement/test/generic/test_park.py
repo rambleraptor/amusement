@@ -1,14 +1,18 @@
 import unittest
+from nose.tools import *
+
 from amusement.park import Park
 from amusement.show import Show
 from amusement.ride import Ride
 
 class ParkTestCase(unittest.TestCase):
-    def test_rides_exist(self):
+    @raises(Exception)
+    def test_rides_no_rides(self):
         park = Park()
         self.assertEqual(park.rides(), [])
 
-    def test_shows_exist(self):
+    @raises(Exception)
+    def test_shows_no_shows(self):
         park = Park()
         self.assertEqual(park.shows(), [])
 
