@@ -51,7 +51,7 @@ class DisneyPark(Park):
             'X-Conversation-Id' : '~WDPRO-MOBILE.CLIENT-PROD'
         }
 
-        response = requests.get(self._url, headers=headers)
+        response = requests.get(self._url, headers=headers, verify=False)
         page = response.json()
         return page
 
@@ -98,7 +98,7 @@ class DisneyPark(Park):
         }
 
         data = 'grant_type=assertion&assertion_type=public&client_id=WDPRO-MOBILE.CLIENT-PROD'
-        r = requests.post(url, data=data, headers=headers)
+        r = requests.post(url, data=data, headers=headers, verify=False)
         response = r.json()
         auth_token = response['token_type'] + ' ' + response['access_token']
         return auth_token

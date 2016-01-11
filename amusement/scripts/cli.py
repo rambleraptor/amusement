@@ -17,9 +17,6 @@ from amusement.parks.seaworld.SeaworldSanDiego import SeaworldSanDiego
 from amusement.parks.seaworld.BuschGardensWilliamsburg import BuschGardensWilliamsburg
 from amusement.parks.HersheyPark import HersheyPark
 
-# Turning off the nasty warnings for insecure SSL. This isn't ideal.
-import requests
-requests.packages.urllib3.disable_warnings()
 
 PARKS = {
     'magic-kingdom' : MagicKingdom(),
