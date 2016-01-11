@@ -57,7 +57,7 @@ a {
   color: #fff;
   text-align: center;
   background-color: #159957;
-  background-image: url("/images/image.png");
+  background-image: url("image.png");
   background-size: 100%;
 }
 
