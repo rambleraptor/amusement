@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='amusement',
-      version='0.1.1',
+      version='0.1.2',
       description='A python package and CLI to get wait times for rides at various theme parks',
       url='http://github.com/astephen2/amusement',
       author='Alex Stephen',
