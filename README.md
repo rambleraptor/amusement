@@ -1,6 +1,6 @@
 # amusement
 
-amusement is a Python package and CLI (command-line interface) to get the current wait times and show times of attractions at many popular theme parks. We currently support:
+amusement is a Python package and CLI (command-line interface) to get the current wait times and show times of attractions at many popular theme parks. These are the official times straight from the official mobile apps of the respective parks. No unreliable crowdsouring required! We currently support:
 
 * All Disney parks in USA, plus Paris
 * All Universal parks worldwide (with the exception of Singapore)
