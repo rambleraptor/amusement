@@ -1,48 +1,11 @@
 import click
-from amusement.parks.disney.MagicKingdom import MagicKingdom
-from amusement.parks.disney.Epcot import Epcot
-from amusement.parks.disney.HollywoodStudios import HollywoodStudios
-from amusement.parks.disney.AnimalKingdom import AnimalKingdom
-from amusement.parks.disney.Disneyland import Disneyland
-from amusement.parks.disney.CaliforniaAdventure import CaliforniaAdventure
-from amusement.parks.disney.DisneylandParis import DisneylandParis
-from amusement.parks.universal.UniversalStudiosFlorida import UniversalStudiosFlorida
-from amusement.parks.universal.IslandsOfAdventure import IslandsOfAdventure
-from amusement.parks.universal.UniversalHollywood import UniversalHollywood
-from amusement.parks.universal.UniversalJapan import UniversalJapan
-from amusement.parks.seaworld.SeaworldOrlando import SeaworldOrlando
-from amusement.parks.seaworld.BuschGardensTampa import BuschGardensTampa
-from amusement.parks.seaworld.SeaworldSanAntonio import SeaworldSanAntonio
-from amusement.parks.seaworld.SeaworldSanDiego import SeaworldSanDiego
-from amusement.parks.seaworld.BuschGardensWilliamsburg import BuschGardensWilliamsburg
-from amusement.parks.HersheyPark import HersheyPark
-
-
-PARKS = {
-    'magic-kingdom' : MagicKingdom(),
-    'epcot' : Epcot(),
-    'hollywood-studios' : HollywoodStudios(),
-    'animal-kingdom' : AnimalKingdom(),
-    'disneyland' : Disneyland(),
-    'ca-adventure' : CaliforniaAdventure(),
-    'disney-paris' : DisneylandParis(),
-    'universal-florida' : UniversalStudiosFlorida(),
-    'islands-adventure' : IslandsOfAdventure(),
-    'universal-hollywood' : UniversalHollywood(),
-    'universal-japan' : UniversalJapan(),
-    'seaworld-orlando' : SeaworldOrlando(),
-    'busch-gardens-tampa' : BuschGardensTampa(),
-    'seaworld-san-antonio' : SeaworldSanAntonio(),
-    'seaworld-san-diego' : SeaworldSanDiego(),
-    'busch-gardens-williamsburg' : BuschGardensWilliamsburg(),
-    'hersheypark' : HersheyPark()
-}
+from amusement import Parks
 
 @click.command()
-@click.argument('name', nargs=1, type=click.Choice(PARKS.keys()))
+@click.argument('name', nargs=1, type=click.Choice(Parks.keys()))
 @click.option('--type', type=click.Choice(['rides', 'shows']), prompt='Please choose rides or shows')
 def cli(name, type):
-    park = PARKS[name]
+    park = Parks[name]
     if type == 'rides':
         print_rides(park.rides())
     if type == 'shows':

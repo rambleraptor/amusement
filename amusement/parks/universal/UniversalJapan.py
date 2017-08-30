@@ -23,9 +23,12 @@ class UniversalJapan(Park):
         for list_thing in page['list']:
             time = list_thing['wait']
             if u'分' in time:
-                time = int(unicode(time).replace(u'分', ''))
+                try:
+                    time = int(unicode(time).replace(u'分', ''))
+                except Exception:
+                    time = '-2'
             elif u'休止中' in time or u'本日終了' in time:
-                time = 'CLOSED'
+                time = '-1'
 
             for thing in list_thing['rows']:
                 attr = self._build_attraction(thing, time, names)
@@ -57,7 +60,6 @@ class UniversalJapan(Park):
         try:
             name = names[attr['text']]
         except:
-            print unicode(attr['text'])
             name = attr['text']
 
         attraction = Ride()
@@ -75,7 +77,6 @@ class UniversalJapan(Park):
         try:
             name = names[show['text']]
         except:
-            print unicode(show['text'])
             name = show['text']
 
         attraction = Show()

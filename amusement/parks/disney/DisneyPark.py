@@ -47,8 +47,8 @@ class DisneyPark(Park):
             'x-UJinn-Copyright' : 'Copyright UIEvolution Inc.',
             'Proxy-Connection' : 'keep-alive',
             'Accept-Encoding' :'compress, gzip',
-            'Authorization' : 'BEARER ' + self._auth_token,
-            'X-Conversation-Id' : '~WDPRO-MOBILE.CLIENT-PROD'
+            'Authorization' : self._auth_token,
+            'X-Conversation-Id' : 'WDPRO-MOBILE.MDX.CLIENT-PROD'
         }
 
         response = requests.get(self._url, headers=headers, verify=False)
@@ -97,7 +97,7 @@ class DisneyPark(Park):
             'Accept-Encoding' : 'gzip, deflate'
         }
 
-        data = 'grant_type=assertion&assertion_type=public&client_id=WDPRO-MOBILE.CLIENT-PROD'
+        data = 'grant_type=assertion&assertion_type=public&client_id=WDPRO-MOBILE.MDX.WDW.ANDROID-PROD'
         r = requests.post(url, data=data, headers=headers, verify=False)
         response = r.json()
         auth_token = response['token_type'] + ' ' + response['access_token']

@@ -1,5 +1,4 @@
 import unittest
-from nose.tools import *
 from amusement.ride import Ride
 
 class RideTestCase(unittest.TestCase):

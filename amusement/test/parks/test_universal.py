@@ -1,10 +1,9 @@
 import unittest
-from nose.tools import *
 from parkcheck import park_valid
 
 from amusement.parks.universal.UniversalStudiosFlorida import UniversalStudiosFlorida
 from amusement.parks.universal.IslandsOfAdventure import IslandsOfAdventure
-from amusement.parks.universal.UniversalHollywood import UniversalHollywood
+from amusement.parks.universal.UniversalStudiosHollywood import UniversalStudiosHollywood
 from amusement.parks.universal.UniversalJapan import UniversalJapan
 
 class UniversalParkTest(unittest.TestCase):
@@ -18,7 +17,7 @@ class UniversalParkTest(unittest.TestCase):
         self.assertEqual(park_valid(ioa), True)
 
     def test_universalhollywood(self):
-        ush = UniversalHollywood()
+        ush = UniversalStudiosHollywood()
         self.assertEqual(park_valid(ush), True)
 
     def test_universaljapan(self):

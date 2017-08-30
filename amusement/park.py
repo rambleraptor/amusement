@@ -3,7 +3,6 @@ import datetime
 # Required to supress some insecure cert warnings
 # Normally, this is bad.
 import requests
-requests.packages.urllib3.disable_warnings()
 
 class Park(object):
     def __init__(self):

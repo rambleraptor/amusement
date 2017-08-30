@@ -29,7 +29,7 @@ class UniversalPark(Park):
 
     def _buildPark(self):
         token = self._get_token()
-        ride_page = self._get_request(token, RIDE_URL)
+        ride_page = self._get_request(token, self.getUrl())
         show_page = self._get_request(token, SHOW_URL)
         for ride in ride_page['Results']:
             if ride['VenueId'] == self.getId():
@@ -40,6 +40,9 @@ class UniversalPark(Park):
             if show['VenueId'] == self.getId():
                 self._make_show(show)
         """
+
+    def getUrl(self):
+        return RIDE_URL
 
     def _make_attraction(self, ride):
         attraction = Ride()

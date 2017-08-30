@@ -41,10 +41,10 @@ amusement supports a lot of parks. Here's a breakdown of which parks are support
 | Animal Kingdom                |x            |             |
 | Disneyland                    |x            |             |
 | Disney's California Adventure |x            |             |
-| Universal Studios Florida     |x<sup>1</sup>|x<sup>1</sup>|
-| Islands of Adventure          |x<sup>1</sup>|x<sup>1</sup>|
-| Universal Studios Hollywood   |x<sup>2</sup>|x<sup>2</sup>|
-| Universal Studios Japan       |x<sup>3</sup>|x<sup>3</sup>|
+| Universal Studios Florida     |x            |x            |
+| Islands of Adventure          |x            |x            |
+| Universal Studios Hollywood   |x            |x            |
+| Universal Studios Japan       |x<sup>1</sup>|x<sup>1</sup>|
 | Hersheypark                   |x            |             |
 | Seaworld Orlando              |x            |x            |
 | Seaworld San Diego            |x            |x            |
@@ -52,18 +52,14 @@ amusement supports a lot of parks. Here's a breakdown of which parks are support
 | Busch Gardens Williamsburg    |x            |x            |
 | Busch Gardens Tampa           |x            |x            |
 
-<sup>1</sup> USF/IOA currently only show a subset of attractions in the park. We are looking to address this in a future release.
-
-<sup>2</sup> USH uses the official times based off of the USH website. Because this is a website that does not consistently present times in a predictable format, this may fail from time to time.
-
-<sup>3</sup> If the park is closed, nothing will appear. We hope to address this in a future release.
+<sup>1</sup> If the park is closed, nothing will appear. We hope to address this in a future release.
 
 ## Contributors
 I welcome any and all contributions! Please view CONTRIBUTING.md for more information.I'm more than happy to help first-timers and anybody else, so don't be shy and respond on the issues if you're interested in helping out.
  
 ## Tests
 ```
-nosetests
+python -m unittest discover test/
 ```
 Run this from the root directory to run tests.
 

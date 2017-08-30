@@ -1,5 +1,4 @@
 import unittest
-from nose.tools import *
 
 from amusement.show import Show
 

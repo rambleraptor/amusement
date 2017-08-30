@@ -1,5 +1,4 @@
 import unittest
-from nose.tools import *
 from parkcheck import park_valid
 
 from amusement.parks.seaworld.BuschGardensTampa import BuschGardensTampa

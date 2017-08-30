@@ -11,7 +11,6 @@ setup(name='amusement',
       install_requires=[
         'requests==2.5.3',
         'beautifulsoup4',
-        'nose',
         'python-dateutil',
         'Click'
       ],

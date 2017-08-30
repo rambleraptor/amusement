@@ -1,18 +1,17 @@
 import unittest
-from nose.tools import *
 from amusement.attraction import Attraction
 
 class AttractionTest(unittest.TestCase):
 
-    @raises(Exception)
     def test_invalidget(self):
         attr = Attraction()
-        attr['invalid_name']
+        with self.assertRaises(Exception):
+            attr['invalid_name']
 
-    @raises(Exception)
     def test_invalidset(self):
-        attr = Attraction()
-        attr['invalid_name'] = 'invalid_set'
+        with self.assertRaises(Exception):
+            attr = Attraction()
+            attr['invalid_name'] = 'invalid_set'
 
     def test_setName(self):
         attr = Attraction()
@@ -27,4 +26,3 @@ class AttractionTest(unittest.TestCase):
         attr._addKeys(keys)
         attr[key_name]
         self.assertEquals(len(attr.attributes()), 2)
-        
