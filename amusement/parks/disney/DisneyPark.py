@@ -47,7 +47,7 @@ class DisneyPark(Park):
             'x-UJinn-Copyright' : 'Copyright UIEvolution Inc.',
             'Proxy-Connection' : 'keep-alive',
             'Accept-Encoding' :'compress, gzip',
-            'Authorization' : self._auth_token,
+            'Authorization' : 'BEARER ' + self._auth_token,
             'X-Conversation-Id' : '~WDPRO-MOBILE.CLIENT-PROD'
         }
 
