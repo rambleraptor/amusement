@@ -17,7 +17,7 @@ class UniversalJapan(Park):
         page = self._get_page() 
 
         if 'list' not in page:
-            print 'USJ - nothing appeared'
+            print('USJ - nothing appeared')
             return
 
         for list_thing in page['list']:

@@ -35,7 +35,7 @@ class UniversalSingapore(Park):
                 self._build_attr(attraction)
 
     def _build_attr(self, attraction):
-        print attraction.contenttype.text
+        print(attraction.contenttype.text)
         if attraction.contenttype.text == 'USSShow':
             document = Show()
             document.setName(attraction.find('name').text)

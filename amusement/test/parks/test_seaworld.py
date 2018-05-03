@@ -1,5 +1,5 @@
 import unittest
-from parkcheck import park_valid
+from .parkcheck import park_valid
 
 from amusement.parks.seaworld.BuschGardensTampa import BuschGardensTampa
 from amusement.parks.seaworld.BuschGardensWilliamsburg import BuschGardensWilliamsburg

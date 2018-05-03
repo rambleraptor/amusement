@@ -1,5 +1,5 @@
 import unittest
-from parkcheck import park_valid
+from .parkcheck import park_valid
 
 from amusement.parks.disney.MagicKingdom import MagicKingdom
 from amusement.parks.disney.AnimalKingdom import AnimalKingdom

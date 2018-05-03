@@ -1,5 +1,5 @@
 import unittest
-from parkcheck import park_valid
+from .parkcheck import park_valid
 
 from amusement.parks.universal.UniversalStudiosFlorida import UniversalStudiosFlorida
 from amusement.parks.universal.IslandsOfAdventure import IslandsOfAdventure

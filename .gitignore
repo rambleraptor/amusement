@@ -15,3 +15,5 @@
 # Virtualenv test folder
 /venv
 /build
+
+.idea/

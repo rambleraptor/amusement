@@ -2,8 +2,14 @@
 # -*- coding: utf-8 -*-
 import requests
 import zipfile
-import StringIO
 import json
+
+# 2/3 compatibility
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
+
 from amusement.park import Park
 from amusement.ride import Ride
 from amusement.config.disneyparis import strings
@@ -29,7 +35,7 @@ class DisneylandParis(Park):
             'Proxy-Connection': 'close',
             'Accept-Encoding' : 'gzip',
             'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-            'Content-Length' : 18,
+            'Content-Length' : '18',
             'Connection' : 'close',
             'User-Agent': 'Disneyland 1.0 (iPhone; iPhone OS 4.1; en_GB'
         }
