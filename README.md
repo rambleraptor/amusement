@@ -1,4 +1,5 @@
 # amusement
+[![Build Status](https://travis-ci.org/rambleraptor/amusement.svg?branch=master)](https://travis-ci.org/rambleraptor/amusement) [![Coverage Status](https://coveralls.io/github/rambleraptor/amusement/badge.svg?branch=master)](https://coveralls.io/github/rambleraptor/amusement?branch=master)
 
 amusement is a Python package and CLI (command-line interface) to get the current wait times and show times of attractions at many popular theme parks. These are the official times straight from the official mobile apps of the respective parks. No unreliable crowdsouring required! We currently support:
 
