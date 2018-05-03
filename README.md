@@ -10,7 +10,7 @@ amusement is a Python package and CLI (command-line interface) to get the curren
 ### CLI
 Get wait times right from your terminal
 ```
-amusement islands-adventure --rides
+amusement islands-adventure --type rides
 ```
 
 ### Library
