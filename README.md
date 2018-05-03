@@ -2,9 +2,8 @@
 
 amusement is a Python package and CLI (command-line interface) to get the current wait times and show times of attractions at many popular theme parks. These are the official times straight from the official mobile apps of the respective parks. No unreliable crowdsouring required! We currently support:
 
-* All Disney parks in USA, plus Paris
+* All Disney parks in USA
 * All Universal parks worldwide (with the exception of Singapore)
-* All Seaworld parks
 * Hersheypark
 
 ## Example
@@ -46,11 +45,6 @@ amusement supports a lot of parks. Here's a breakdown of which parks are support
 | Universal Studios Hollywood   |x            |x            |
 | Universal Studios Japan       |x<sup>1</sup>|x<sup>1</sup>|
 | Hersheypark                   |x            |             |
-| Seaworld Orlando              |x            |x            |
-| Seaworld San Diego            |x            |x            |
-| Seaworld San Antonio          |x            |x            |
-| Busch Gardens Williamsburg    |x            |x            |
-| Busch Gardens Tampa           |x            |x            |
 
 <sup>1</sup> If the park is closed, nothing will appear. We hope to address this in a future release.
 
