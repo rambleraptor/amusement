@@ -86,5 +86,5 @@ class UniversalSingapore(Park):
         return array_times
 
     def get_page(self, url):
-        r = requests.get(url, headers=self._headers)
+        r = requests.get(url, headers=self._headers, timeout=3)
         return BeautifulSoup(r.text)

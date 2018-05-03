@@ -40,7 +40,7 @@ class DisneylandParis(Park):
             'User-Agent': 'Disneyland 1.0 (iPhone; iPhone OS 4.1; en_GB'
         }
 
-        r = requests.post('https://disney.cms.pureagency.com/cms/ProxyTempsAttente', headers=headers, data=body, verify=False)
+        r = requests.post('https://disney.cms.pureagency.com/cms/ProxyTempsAttente', headers=headers, data=body, timeout=3)
         z = zipfile.ZipFile(StringIO.StringIO(r.content)).open('temps_attente.json')
         return json.loads(z.read())
 

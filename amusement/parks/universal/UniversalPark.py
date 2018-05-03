@@ -79,7 +79,7 @@ class UniversalPark(Park):
             'X-UNIWebService-Token' : token 
         }
         headers.update(SHARED_HEADERS)
-        r = requests.get(url, headers=headers)
+        r = requests.get(url, headers=headers, timeout=3)
         return r.json()
 
     def _get_token(self):
@@ -103,5 +103,5 @@ class UniversalPark(Park):
 
         headers.update(SHARED_HEADERS)
 
-        r = requests.post('https://services.universalorlando.com/api', headers=headers, data=json.dumps(params, ensure_ascii=False), verify=False)
+        r = requests.post('https://services.universalorlando.com/api', headers=headers, data=json.dumps(params, ensure_ascii=False), timeout=3)
         return r.json()['Token']

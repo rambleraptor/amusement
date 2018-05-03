@@ -33,7 +33,7 @@ class SeaworldPark(Park):
 
     def _get_page(self, url):
         # Make page request, return Beautiful Soup request
-        response = requests.get(url, auth=('seaworld', '1393288508')) 
+        response = requests.get(url, auth=('seaworld', '1393288508'), timeout=3)
         return response.json()
 
     def _build_ride(self, row):

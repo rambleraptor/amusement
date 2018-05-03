@@ -49,11 +49,11 @@ class UniversalJapan(Park):
 
 
     def _get_page(self):
-        r = requests.get('http://ar02.biglobe.ne.jp/app/waittime/waittime.json')
+        r = requests.get('http://ar02.biglobe.ne.jp/app/waittime/waittime.json', timeout=3)
         return r.json()
 
     def _get_showpage(self):
-        r = requests.get('http://ar02.biglobe.ne.jp/app/waittime/schedule.json')
+        r = requests.get('http://ar02.biglobe.ne.jp/app/waittime/schedule.json', timeout=3)
         return r.json()
 
     def _build_attraction(self, attr, time, names):

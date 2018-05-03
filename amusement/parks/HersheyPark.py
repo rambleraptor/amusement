@@ -24,7 +24,7 @@ class HersheyPark(Park):
 
     def get_page(self, url):
         # Make page request, return Beautiful Soup request
-        response = requests.get(url)
+        response = requests.get(url, timeout=3)
         return response.json()
 
     def _build_attr(self, row, wait_page):

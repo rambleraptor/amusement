@@ -47,7 +47,7 @@ class DisneyPark(Park):
             'X-Conversation-Id': 'WDPRO-MOBILE.MDX.CLIENT-PROD'
         }
 
-        response = requests.get(self._url, headers=headers)
+        response = requests.get(self._url, headers=headers, timeout=3)
         page = response.json()
         return page
 
@@ -92,7 +92,7 @@ class DisneyPark(Park):
             "client_id": "TPR-DLR_COPY.AND-PROD"
         }
 
-        r = requests.post(url, data=data, headers=headers)
+        r = requests.post(url, data=data, headers=headers, timeout=3)
         response = r.json()
         auth_token = response['token_type'] + ' ' + response['access_token']
         return auth_token
