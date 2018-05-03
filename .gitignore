@@ -17,4 +17,4 @@
 /build
 
 .idea/
-.pytest_cache/
+.coverage
