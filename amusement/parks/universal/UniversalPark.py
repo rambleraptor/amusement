@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 import requests
 import datetime
 import hmac
@@ -8,21 +9,24 @@ import json
 from amusement.park import Park
 from amusement.ride import Ride
 from amusement.show import Show
+
 SHARED_HEADERS = {
-    'Accept'                          : 'application/json',
-    'Accept-Language'                 : 'en-US',
-    'X-UNIWebService-AppVersion'      : '1.2.1',
-    'X-UNIWebService-Platform'        : 'Android',
-    'X-UNIWebService-PlatformVersion' : '4.4.2',
-    'X-UNIWebService-Device'          : 'samsung SM-N9005',
-    'X-UNIWebService-ServiceVersion'  : '1',
-    'User-Agent'                      : 'Dalvik/1.6.0 (Linux; U; Android 4.4.2; SM-N9005 Build/KOT49H)',
-    'Connection'                      : 'keep-alive',
-    'Accept-Encoding'                 : 'gzip'
-  }
+    'Accept': 'application/json',
+    'Accept-Language': 'en-US',
+    'X-UNIWebService-AppVersion': '1.2.1',
+    'X-UNIWebService-Platform': 'Android',
+    'X-UNIWebService-PlatformVersion': '4.4.2',
+    'X-UNIWebService-Device': 'samsung SM-N9005',
+    'X-UNIWebService-ServiceVersion': '1',
+    'User-Agent': 'Dalvik/1.6.0 (Linux; U; Android 4.4.2; SM-N9005 Build/KOT49H)',
+    'Connection': 'keep-alive',
+    'Accept-Encoding': 'gzip'
+}
 
 RIDE_URL = 'https://services.universalorlando.com/api/pointsofinterest/rides?pageSize=all'
 SHOW_URL = 'https://services.universalorlando.com/api/pointsofinterest/Shows'
+
+
 class UniversalPark(Park):
     def __init__(self):
         super(UniversalPark, self).__init__()
@@ -72,36 +76,37 @@ class UniversalPark(Park):
 
         self.addShow(show_obj)
 
-
     def _get_request(self, token, url):
         headers = {
-            'X-UNIWebService-ApiKey' : 'AndroidMobileApp',
-            'X-UNIWebService-Token' : token 
+            'X-UNIWebService-ApiKey': 'AndroidMobileApp',
+            'X-UNIWebService-Token': token
         }
         headers.update(SHARED_HEADERS)
-        r = requests.get(url, headers=headers, timeout=3)
+        r = requests.get(url, headers=headers)
         return r.json()
 
     def _get_token(self):
         # Thanks to lloydpick for the Key / Secret
-        KEY    = 'AndroidMobileApp'
-        SECRET = 'AndroidMobileAppSecretKey182014'
+        KEY = 'AndroidMobileApp'
+        SECRET = b'AndroidMobileAppSecretKey182014'
 
         date = datetime.datetime.utcnow().strftime("%a, %d %b %Y %H:%M:%S GMT")
         secret_test = "{KEY}\n{date}\n".format(KEY=KEY, date=date)
-        digest = hmac.new(SECRET, secret_test, hashlib.sha256)
+        digest = hmac.new(SECRET, secret_test.encode('ascii'), hashlib.sha256)
         signature = base64.b64encode(digest.digest()).strip()
-        signature = re.sub('/\=$/', "\u003d", signature)
-        params = { 
-                'apikey': 'AndroidMobileApp', 
-                'signature': signature 
+        signature = re.sub('/=$/', "\u003d", signature.decode('ascii'))
+
+        params = {
+            'apikey': 'AndroidMobileApp',
+            'signature': signature
         }
+
         headers = {
-            'Date' :date,
-            'Content-Type' : 'application/json; charset=UTF-8'
+            'Date': date,
+            'Content-Type': 'application/json; charset=UTF-8'
         }
 
         headers.update(SHARED_HEADERS)
 
-        r = requests.post('https://services.universalorlando.com/api', headers=headers, data=json.dumps(params, ensure_ascii=False), timeout=3)
+        r = requests.post('https://services.universalorlando.com/api', headers=headers, data=json.dumps(params, ensure_ascii=False), verify=False)
         return r.json()['Token']

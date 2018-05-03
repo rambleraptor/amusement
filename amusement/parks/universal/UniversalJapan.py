@@ -1,4 +1,5 @@
 # encoding: utf-8
+from __future__ import unicode_literals
 import requests
 import dateutil
 from amusement.park import Park
@@ -24,7 +25,7 @@ class UniversalJapan(Park):
             time = list_thing['wait']
             if u'分' in time:
                 try:
-                    time = int(unicode(time).replace(u'分', ''))
+                    time = int(str(time).replace(u'分', ''))
                 except Exception:
                     time = '-2'
             elif u'休止中' in time or u'本日終了' in time:
