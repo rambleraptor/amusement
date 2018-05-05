@@ -9,7 +9,7 @@ def cli(name, type):
     if type == 'rides':
         print_rides(park.rides())
     if type == 'shows':
-        print park.shows()
+        print(park.shows())
 
 def print_rides(ride_array):
     longest_name = max(len(key['name']) for key in ride_array)
@@ -29,8 +29,6 @@ def print_rides(ride_array):
         line += ' ' * 5
         line += str(ride['wait']) + ' mins'
         click.echo(line)
-
-
 
 if __name__ == "__main__":
     cli()

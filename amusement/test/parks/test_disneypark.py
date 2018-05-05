@@ -1,5 +1,5 @@
 import unittest
-from parkcheck import park_valid
+from .parkcheck import park_valid
 
 from amusement.parks.disney.MagicKingdom import MagicKingdom
 from amusement.parks.disney.AnimalKingdom import AnimalKingdom
@@ -7,7 +7,6 @@ from amusement.parks.disney.CaliforniaAdventure import CaliforniaAdventure
 from amusement.parks.disney.Disneyland import Disneyland
 from amusement.parks.disney.Epcot import Epcot
 from amusement.parks.disney.HollywoodStudios import HollywoodStudios
-from amusement.parks.disney.DisneylandParis import DisneylandParis
 
 class DisneyParkTest(unittest.TestCase):
 
@@ -34,8 +33,3 @@ class DisneyParkTest(unittest.TestCase):
     def test_californiaadventure(self):
         ca = CaliforniaAdventure()
         self.assertEqual(park_valid(ca), True)
-
-    def test_disneylandparis(self):
-        dlp = DisneylandParis()
-        self.assertEqual(park_valid(dlp), True)
-

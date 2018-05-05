@@ -35,7 +35,7 @@ class UniversalSingapore(Park):
                 self._build_attr(attraction)
 
     def _build_attr(self, attraction):
-        print attraction.contenttype.text
+        print(attraction.contenttype.text)
         if attraction.contenttype.text == 'USSShow':
             document = Show()
             document.setName(attraction.find('name').text)
@@ -86,5 +86,5 @@ class UniversalSingapore(Park):
         return array_times
 
     def get_page(self, url):
-        r = requests.get(url, headers=self._headers)
+        r = requests.get(url, headers=self._headers, timeout=3)
         return BeautifulSoup(r.text)

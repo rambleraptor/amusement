@@ -1,5 +1,5 @@
 import unittest
-from parkcheck import park_valid
+from .parkcheck import park_valid
 
 from amusement.parks.HersheyPark import HersheyPark
 

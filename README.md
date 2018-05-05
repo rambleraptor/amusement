@@ -1,17 +1,17 @@
 # amusement
+[![Build Status](https://travis-ci.org/rambleraptor/amusement.svg?branch=master)](https://travis-ci.org/rambleraptor/amusement) [![Coverage Status](https://coveralls.io/github/rambleraptor/amusement/badge.svg?branch=master)](https://coveralls.io/github/rambleraptor/amusement?branch=master)
 
 amusement is a Python package and CLI (command-line interface) to get the current wait times and show times of attractions at many popular theme parks. These are the official times straight from the official mobile apps of the respective parks. No unreliable crowdsouring required! We currently support:
 
-* All Disney parks in USA, plus Paris
+* All Disney parks in USA
 * All Universal parks worldwide (with the exception of Singapore)
-* All Seaworld parks
 * Hersheypark
 
 ## Example
 ### CLI
 Get wait times right from your terminal
 ```
-amusement islands-adventure --rides
+amusement islands-adventure --type rides
 ```
 
 ### Library
@@ -46,11 +46,6 @@ amusement supports a lot of parks. Here's a breakdown of which parks are support
 | Universal Studios Hollywood   |x            |x            |
 | Universal Studios Japan       |x<sup>1</sup>|x<sup>1</sup>|
 | Hersheypark                   |x            |             |
-| Seaworld Orlando              |x            |x            |
-| Seaworld San Diego            |x            |x            |
-| Seaworld San Antonio          |x            |x            |
-| Busch Gardens Williamsburg    |x            |x            |
-| Busch Gardens Tampa           |x            |x            |
 
 <sup>1</sup> If the park is closed, nothing will appear. We hope to address this in a future release.
 
